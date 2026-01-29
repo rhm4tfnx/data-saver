@@ -3,23 +3,16 @@ import Home from "../pages/homePage";
 import AddData from "../pages/addDataPage";
 import FindData from "../pages/findDataPage";
 import Test from "../pages/test";
+import ResponsiveLayout from "../components/Layouts/ResponsiveLayout";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/test",
-    element: <Test />,
-  },
-  {
-    path: "/add",
-    element: <AddData />,
-  },
-  {
-    path: "/find",
-    element: <FindData />,
+    element: <ResponsiveLayout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/add", element: <AddData /> },
+      { path: "/find", element: <FindData /> },
+    ],
   },
 ]);
 
